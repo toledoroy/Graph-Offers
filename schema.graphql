@@ -4,3 +4,20 @@ type ExampleEntity @entity {
   account: Bytes! # address
   operator: Bytes! # address
 }
+
+
+type Offer @entity {
+  id: ID!
+  account: Bytes! # address
+  uri: String!
+}
+
+type Order @entity {
+  id: ID!
+  offer_id: ID!
+  account: Bytes! # address
+  request_uri: String!
+  delivery_uri: String!
+  review_uri: String!
+  score: Int!
+}
