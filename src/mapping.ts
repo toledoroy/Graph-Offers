@@ -79,7 +79,14 @@ export function handleTransferBatch(event: TransferBatch): void {}
 
 export function handleTransferSingle(event: TransferSingle): void {}
 
-export function handleURI(event: URI): void {}
+export function handleURI(event: URI): void {
+  console.warn("URI Evet: ", event);
+  let entity = new ExampleEntity(event.params.id);
+  entity.uri = event.params.value;
+  
+  //Save
+  entity.save()
+}
 
 export function handle_delivery(event: _delivery): void {}
 
